@@ -27,7 +27,6 @@ while($indice < 30);
 
 for($i = 0; $i < 25; $i++ ){
  echo $i." Indiozinho";
-
 }
 
 
