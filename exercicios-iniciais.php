@@ -205,6 +205,7 @@ break;
 }
 echo "<br>"."<br>"."<br>";
 ?>
+</fieldset>
 
 </body>
 </html>
