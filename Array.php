@@ -76,10 +76,5 @@ $a_Transporte = ["Carro","Moto","Avião","Ônibus","Metro","Bicicleta","Balsa"];
 ?>
 </fieldset>
 </form>
-
-
-
-
-
 </body>
 </html>
