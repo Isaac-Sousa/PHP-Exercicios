@@ -206,6 +206,16 @@ break;
 echo "<br>"."<br>"."<br>";
 ?>
 </fieldset>
+<br>
+<?php
+ echo "<font size= 5>"."<b>"."<li>"."Data e Hora"."</b>"."</font>";
+echo date("d/m/Y")."<br>";
+echo date("F, d, Y")."<br>";
+echo date("H:i:s");
 
+
+
+
+?>
 </body>
 </html>
