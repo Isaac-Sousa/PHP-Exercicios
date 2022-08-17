@@ -33,20 +33,31 @@ else{
 echo "<br>";
 echo "<br>";
 echo "<font size= 5>"."<b>"."<li>"."Lendo e Gravar em TXT"."</b>"."</font>"."<br>";
-//Defina o arquivo ou um nome, se não existir na máquina u comando com "a+" tentara cria-lo
-$file = "Materiais.txt";
+
 //crie uma funcao para facilitar
-function escreva(string $mensagem) {
+function escreva(string $mensagem, string $file) {
+    //acima o $file vai definir o arquivo
   $abrir=fopen( $file,"a+" );
-  fwrite($abrir,$mensagem);
+  // a+ abre o arquivo para leitura e editar, coloca o ponteiro no inicio do arquivo e seo arquivo não existir tenta cria-lo
+  fwrite($abrir,"{$mensagem}  <br>\r\n ");
+  //OBS: O <br> está aparecendo no arquivo
   fclose($abrir);
 }
-escreva("Precisaremos de tijolos, cimento e areia");
+escreva("Precisaremos de tijolos, cimento e areia","Materiais.txt");
 
+function leia(string $file){
+$abrir=fopen( $file, "r");
+// r abre o arquivo somente para leitura
+$mensagem=fread($abrir, filesize($file));
+fclose($abrir);
+return $mensagem;
+}
+ echo leia("Materiais.txt");
 ?>
 
 </body>
 </html>
+
 
 
 
