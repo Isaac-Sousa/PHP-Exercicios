@@ -122,7 +122,7 @@ echo "<br>"."<br>"."<br>";
      <div>
        <br>
      <input type="submit" name="Confirmar"/>   
-     <input type="reset" name="Cancelar">  
+     <input type="reset" name="Cancelar"/>  
     </div>
     
    </form>

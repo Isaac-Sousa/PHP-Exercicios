@@ -6,5 +6,4 @@ function leia(string $file){
     fclose($abrir);
     return $mensagem;
     }
-     echo leia("Comida.txt")."<br>";
 ?>
