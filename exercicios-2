@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Direcionamento</h1>
+    <?php
+date_default_timezone_set('America/Fortaleza');
+// mudar de arquivo depois, data e hora com if else
+ echo "<font size= 5>"."<b>"."<li>"."Data e Hora"."</b>"."</font>"."<br>";
+echo date("d/m/Y")."<br>";
+echo date("F, d, Y")."<br>";
+echo date("H:i:s")."<br>";
+$hora = date("H");
+//echo $hora;
+if($hora > 0 && $hora <=6){
+echo "Boa madrugada, ainda são {$hora} horas "."<br>";
+}
+elseif($hora > 6 && $hora <= 12){
+        echo "Bom dia, já são {$hora} horas"."<br>";
+}
+elseif($hora > 12 && $hora <= 18) {
+        echo "Boa tarde, são {$hora} horas"."<br>";
+}
+else{
+        echo "Boa noite, são {$hora} horas"."<br>";
+}
+
+echo "<br>";
+echo "<br>";
+echo "<font size= 5>"."<b>"."<li>"."Lendo e Gravar em TXT"."</b>"."</font>"."<br>";
+
+//crie uma funcao para facilitar
+function escreva(string $mensagem, string $file) {
+    //acima o $file vai definir o arquivo
+  $abrir=fopen( $file,"a+" );
+  // a+ abre o arquivo para leitura e editar, coloca o ponteiro no inicio do arquivo e seo arquivo não existir tenta cria-lo
+  fwrite($abrir,"{$mensagem}  <br>\r\n ");
+  //OBS: O <br> está aparecendo no arquivo
+  fclose($abrir);
+}
+escreva("Precisaremos de tijolos, cimento e areia","Materiais.txt");
+
+function leia(string $file){
+$abrir=fopen( $file, "r");
+// r abre o arquivo somente para leitura
+$mensagem=fread($abrir, filesize($file));
+fclose($abrir);
+return $mensagem;
+}
+ echo leia("Materiais.txt");
+?>
+
+</body>
+</html>
+
+
+
+
+

@@ -7,6 +7,9 @@
     <title>Exercicios PHP</title>
 </head>
 <body> 
+ <h3>Básicos</h3>
+  <br>
+  <br>
 <form name="f_test" method="post" action="">
      
      <div>
@@ -86,7 +89,7 @@ echo "<br>";
 
 echo "<b>"."<li>"."4 IF,ELSE e ELSEIF"."</b>";
 echo "<br>";
-
+// POST usado para dinamizar esse exercicio.
 $Nome2 = filter_input(INPUT_POST, "f_Nome", FILTER_SANITIZE_STRING);
 $Idade1 = filter_input(INPUT_POST,"f_Idade", FILTER_SANITIZE_NUMBER_INT);
 echo "Olá {$Nome2} ";
@@ -157,5 +160,53 @@ echo "<br>"."<br>"."<br>"."<br>"."<br>";
 
 ?>
 
+<form name="f_test" method="post" action="">
+     
+     <div>
+       <label>Número:</label> <input type="number" name="f_Dia" value=" "/>
+     </div>
+     <div>
+       <br>
+     <input type="submit" name="Confirmar"/>   
+     <input type="reset" name="Cancelar">  
+    </div>
+    
+   </form>
+  </fieldset> 
+  <hr />
+  <fieldset>
+</form>
+<hr4>
+<?php
+$Day1 = filter_input(INPUT_POST,"f_Dia",FILTER_SANITIZE_NUMBER_INT);
+switch($Day1){
+case 1: 
+ echo "Segunda-Feira"."<br>";
+break;
+case 2: 
+ echo "Terça-Feira"."<br>";
+break;
+case 3: 
+ echo "Quarta-Feira"."<br>";
+break;
+case 4: 
+ echo "Quinta-Feira"."<br>";
+break;
+case 5: 
+ echo "Sexta-Feira"."<br>";
+break;
+case 6: 
+ echo "Sabádo-Feira"."<br>";
+break;
+case 7: 
+ echo "Domingo-Feira"."<br>";
+break;
+
+}
+echo "<br>"."<br>"."<br>";
+?>
+</fieldset>
+<br>
+?>
 </body>
 </html>
