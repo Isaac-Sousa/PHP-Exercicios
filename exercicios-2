@@ -52,9 +52,65 @@ $mensagem=fread($abrir, filesize($file));
 fclose($abrir);
 return $mensagem;
 }
- echo leia("Materiais.txt");
-?>
+ echo leia("Materiais.txt")."<br>";
+ echo "<br><br>";
 
+?>
+<!--
+        Esse formulário será usado para CRUD de COOKIE
+-->
+<br><br>
+ <form name="f_cripto" method="post" action=" ">
+ <fieldset>
+  <Label>Informe um número inteiro, de 1 á 4.</Label><br>
+   <div>
+  <label>Digite aqui :</label> <input type="number" name="f_switch" value=" "/>
+   </div>
+   <br>
+  <input type="submit" name="Confirmar"/>
+ </fieldset>
+</form>
+ <?php
+ $biscoito = filter_input(INPUT_POST,"f_switch",FILTER_SANITIZE_NUMBER_INT);
+ function Criar() {
+    echo "Criando";
+    setcookie("cup","Cupcake",time()+100);
+ }
+ function Ler(){
+    //echo $_COOKIE("CK");
+    echo filter_input(INPUT_COOKIE, "cup", FILTER_SANITIZE_STRING);
+ }
+ function Alterar(){
+    echo "Alterando";
+    setcookie("cup","Moranguinho");
+ }
+ function Deletar(){
+   echo "Deletando";
+   setcookie("cup","Cupcake",time()-1);
+ }
+
+ switch($biscoito){
+ case 1: 
+    Criar();
+ break;
+ case 2:
+    Ler();
+ break;
+ case 3:
+    Alterar();
+ break;   
+ case 4:
+    Deletar();
+ break;
+ default:
+  echo "Escolha um número válido por favor"; 
+ }
+ session_start();
+ $_SESSION["chave"] = "Boy, tu é lindo boy";
+ echo $_SESSION["chave"];
+ //session_destroy() irá destruir o aquivo temporario da SESSION
+
+ ?>
 </body>
 </html>
 

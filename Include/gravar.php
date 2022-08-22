@@ -7,7 +7,7 @@ function escreva(string $mensagem, string $file) {
   //OBS: O <br> está aparecendo no arquivo
   fclose($abrir);
 }
-escreva("Cupcake de morango com calda de morango e granulados coloridos","Comida.txt");
+
 
 
 ?>
