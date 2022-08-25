@@ -9,7 +9,7 @@
 <body>
 <?php
 function AbrirConexao(){
-$conexao = new PDO ("mysql:host=localhost;dbname=test_bd;charset=utf8","root","root");
+$conexao = new PDO ("mysql:host=localhost;dbname=nomeBanco;charset=utf8","user","password");
 return $conexao;
 }
 //testbd não existe na maquina, o banco existente é test_bd, a alteração será feita depois do teste de "filtração" de erro do TRY CATCH.
